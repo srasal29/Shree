@@ -22,7 +22,7 @@ public class VerifyBugFixing {
 	
 	@BeforeTest
 	public void launchBrowser() {
-		System.setProperty("webdriver.chrome.driver","D:\\Softwares\\Selenium and crome\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","D:\\Softwares\\All Browser\\Chrome versions\\chromedriver32-102\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}	
@@ -34,10 +34,11 @@ public class VerifyBugFixing {
 	@BeforeMethod
 	public void loginToApplication() throws InterruptedException {
 		driver.get("https://online.actitime.com/suraksha/login.do");
-		loginPage.sendUserName();
-		loginPage.sendPassword();
-		loginPage.sendKeepMeLogin();
-		loginPage.clickOnLoginButton();
+//		loginPage.sendUserName();
+//		loginPage.sendPassword();
+//		loginPage.sendKeepMeLogin();
+//		loginPage.clickOnLoginButton();
+		loginPage.loginToApplication();
 		Thread.sleep(5000);
 	}	 
 	@Test
@@ -64,7 +65,7 @@ public class VerifyBugFixing {
 		bugfixing.sendvaluemrComment();
 		}
 	
-	@AfterMethod (enabled=false)
+	@AfterMethod 
 	public void lougoutToApplication() {
 		loginPage.clickOnLogoutButton();
 	}
@@ -73,7 +74,7 @@ public class VerifyBugFixing {
 		loginPage = null;
 		bugfixing = null;
 	}
-	@AfterTest (enabled=false)
+	@AfterTest 
 	public void closebrowser() {
 		driver.close();
 		driver=null;

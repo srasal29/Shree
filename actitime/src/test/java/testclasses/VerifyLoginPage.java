@@ -27,12 +27,7 @@ public void launchBrowser() {
 public void loginToApplication() throws EncryptedDocumentException, IOException {
 	driver.get("https://online.actitime.com/suraksha/login.do");
 	loginPage = new LoginPage (driver);
-	loginPage.sendUserName();
-	loginPage.sendPassword();
-	loginPage.sendKeepMeLogin();
-	loginPage.clickOnLoginButton();
-	
-	 
+	loginPage.loginToApplication(); 
 }
 @Test
 public void test() {
@@ -42,11 +37,11 @@ public void test() {
 	System.out.println(title);
 	System.out.println("We are best");
 }
-@AfterMethod(enabled=false)
+@AfterMethod
 public void logoutToApplication() {
 loginPage.clickOnLogoutButton();
 }
-@AfterClass(enabled=false)
+@AfterClass
 public void afterClass() {
 	driver.close();
 }

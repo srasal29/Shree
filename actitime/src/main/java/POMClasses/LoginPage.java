@@ -38,7 +38,7 @@ public LoginPage(WebDriver driver)
 {
 PageFactory.initElements(driver, this);	
 }
-public void sendUserName() throws EncryptedDocumentException, IOException    {
+/*public void sendUserName() throws EncryptedDocumentException, IOException    {
 	userName.click();
 	//userName.sendKeys("srasal29@gmail.com");
 	String path=("C:\\Users\\ADMIN\\Desktop\\Ram.xlsx");
@@ -90,14 +90,17 @@ public void clickOnLoginButton() {
 public void clickOnLogoutButton() {
 	logout.click();
 }
+or
+*/
 
-
-/*			or
+			
 public void loginToApplication() {
 	userName.sendKeys("srasal29@gmail.com");
 	password.sendKeys("8013Rasal@");
 	keepMeLoggedInCheckBox.click();
-
-	}*/
-
+	login.click();
+	}
+public void clickOnLogoutButton() {
+	logout.click();
+}
 }

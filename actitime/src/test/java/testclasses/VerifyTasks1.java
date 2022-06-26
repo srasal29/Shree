@@ -19,7 +19,7 @@ public class VerifyTasks1 {
 LoginPage loginPage; HeaderHomePage headerHomePage;
 @BeforeClass
 public void launchBrowser() {
-	System.setProperty("webdriver.chrome.driver","D:\\Softwares\\Selenium and crome\\chromedriver_win32\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver","D:\\Softwares\\All Browser\\Chrome versions\\chromedriver32-102\\chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.manage().window().maximize();
 }	
@@ -27,10 +27,7 @@ public void launchBrowser() {
 public void loginToApplication() {
 	driver.get("https://online.actitime.com/suraksha/login.do");
 	loginPage = new LoginPage (driver);
-	loginPage.sendUserName();
-	loginPage.sendPassword();
-	loginPage.sendKeepMeLogin();
-	loginPage.clickOnLoginButton();
+	loginPage.loginToApplication();
 }	 
 @Test
 public void verifyTask1() {
@@ -56,7 +53,7 @@ public void verifyTask1() {
 public void lougoutToApplication() {
 	loginPage.clickOnLogoutButton();
 }
-@AfterClass (enabled=false)
+@AfterClass 
 public void closebrowser() {
 driver.close();
 }
